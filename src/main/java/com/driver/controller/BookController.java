@@ -1,6 +1,8 @@
 package com.driver.controller;
 
 import com.driver.models.Book;
+import com.driver.services.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -8,10 +10,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 //Add required annotations
+@RestController
 
 public class BookController {
 
-
+@Autowired
+    BookService bookService;
+public ResponseEntity createBook(@RequestBody() Book book){
+    bookService.createBook(book);
+    return new ResponseEntity<>("Success", HttpStatus.ACCEPTED);
+}
     //Write createBook API with required annotations
 
     //Add required annotations
