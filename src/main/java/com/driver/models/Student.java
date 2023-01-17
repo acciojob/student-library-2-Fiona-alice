@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table
+
 public class Student {
 
     @Id
@@ -25,8 +25,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(int id, String emailId, String name, int age, String country) {
-        this.id = id;
+    public Student(String emailId, String name, int age, String country) {
         this.emailId = emailId;
         this.name = name;
         this.age = age;
@@ -45,6 +44,7 @@ public class Student {
 
     @UpdateTimestamp
     private Date updatedOn;
+
 
     @Override
     public String toString() {

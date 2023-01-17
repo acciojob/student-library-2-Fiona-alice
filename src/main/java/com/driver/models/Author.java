@@ -1,13 +1,12 @@
 package com.driver.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jdk.jfr.DataAmount;
+
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table
 
 public class Author {
 
@@ -22,7 +21,7 @@ public class Author {
     private int age;
     private String country;
 
-    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnoreProperties("author")
     private List<Book> booksWritten;
 

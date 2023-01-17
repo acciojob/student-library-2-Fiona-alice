@@ -11,11 +11,12 @@ import java.util.List;
 
 //Add required annotations
 @RestController
-@RequestMapping("book")
+@RequestMapping("/book")
 public class BookController {
 
 @Autowired
     BookService bookService;
+@PostMapping("/")
 public ResponseEntity createBook(@RequestBody() Book book){
     bookService.createBook(book);
     return new ResponseEntity<>("Success", HttpStatus.ACCEPTED);
