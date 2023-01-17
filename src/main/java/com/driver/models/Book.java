@@ -45,7 +45,7 @@ public class Book {
         this.genre = genre;
         this.author = author;
         this.card = card;
-        this.available = available;
+        this.available = true;
     }
 
     public int getId() {
